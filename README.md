@@ -255,13 +255,6 @@ make build-web
    make doctor
    ```
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Run `make pre-commit` before committing
-4. Submit a pull request
-
 ## License
 
 This project is created for Palm Code Challenge purposes.
