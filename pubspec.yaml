@@ -1,0 +1,39 @@
+name: palm_code_challenge
+description: "Palm Code Challenge"
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  dio: 5.8.0+1
+  flutter_bloc: 9.1.1
+  very_good_infinite_list: 0.9.0
+  hive: 2.2.3
+  hive_flutter: 1.1.0
+  go_router: 15.2.4
+  equatable: 2.0.7
+  get_it: 8.0.2
+  json_annotation: 4.9.0
+  cached_network_image: 3.4.1
+  skeletonizer: 1.4.3
+  flutter_screenutil: 5.9.3
+  dio_cache_interceptor: 4.0.3
+  http_cache_hive_store: 5.0.1
+  shared_preferences: 2.2.2
+  path_provider: 2.1.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 5.0.0
+  build_runner: 2.4.13
+  json_serializable: 6.8.0
+  hive_generator: 2.0.1
+  mockito: 5.4.4
+
+flutter:
+  uses-material-design: true
