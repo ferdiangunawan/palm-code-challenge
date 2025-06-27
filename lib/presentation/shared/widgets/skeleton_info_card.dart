@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 
 class SkeletonInfoCard extends StatelessWidget {
   final String title;
@@ -21,7 +22,7 @@ class SkeletonInfoCard extends StatelessWidget {
         child: Row(
           children: [
             Icon(icon, color: Theme.of(context).colorScheme.primary),
-            SizedBox(width: 12.w),
+            Gap(12.w),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

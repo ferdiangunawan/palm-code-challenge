@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:palm_code_challenge/common/utils/network_error_handler.dart';
 
 class ErrorDisplay extends StatelessWidget {
@@ -24,18 +25,18 @@ class ErrorDisplay extends StatelessWidget {
             size: 64.0,
             color: isNetworkError ? Colors.orange : Colors.red,
           ),
-          const SizedBox(height: 16.0),
+          const Gap(16.0),
           Text(
             'Failed to load books',
             style: Theme.of(context).textTheme.headlineSmall,
           ),
-          const SizedBox(height: 8.0),
+          const Gap(8.0),
           Text(
             message,
             style: Theme.of(context).textTheme.bodyMedium,
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 16.0),
+          const Gap(16.0),
           ElevatedButton(onPressed: onRetry, child: const Text('Retry')),
         ],
       ),

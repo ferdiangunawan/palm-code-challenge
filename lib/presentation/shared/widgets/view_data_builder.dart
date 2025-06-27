@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:palm_code_challenge/common/utils/index.dart';
 
 class ViewDataBuilder<T> extends StatelessWidget {
@@ -61,7 +62,7 @@ class ViewDataBuilder<T> extends StatelessWidget {
                     size: 16,
                     color: isNetworkError ? Colors.orange : Colors.red,
                   ),
-                  const SizedBox(width: 8),
+                  Gap(8),
                   Expanded(
                     child: Text(
                       viewData.message,
@@ -102,7 +103,7 @@ class ViewDataBuilder<T> extends StatelessWidget {
                           ? Colors.orange
                           : Colors.red,
                 ),
-                const SizedBox(height: 16),
+                Gap(16),
                 Text(
                   viewData.message,
                   textAlign: TextAlign.center,
@@ -120,7 +121,7 @@ class ViewDataBuilder<T> extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Icon(Icons.inbox, size: 48, color: Colors.grey),
-                const SizedBox(height: 16),
+                Gap(16),
                 Text(
                   viewData.message,
                   textAlign: TextAlign.center,

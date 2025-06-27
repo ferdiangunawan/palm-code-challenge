@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:palm_code_challenge/data/models/index.dart';
 import 'package:palm_code_challenge/presentation/liked_books/cubit/index.dart';
@@ -70,12 +71,12 @@ class _LikedBooksPageState extends State<LikedBooksPage> {
                         size: 64.sp,
                         color: Colors.grey,
                       ),
-                      SizedBox(height: 16.h),
+                      Gap(16.h),
                       Text(
                         'No liked books yet',
                         style: Theme.of(context).textTheme.headlineSmall,
                       ),
-                      SizedBox(height: 8.h),
+                      Gap(8.h),
                       Text(
                         'Tap the heart icon on any book to add it here',
                         style: Theme.of(context).textTheme.bodyMedium,

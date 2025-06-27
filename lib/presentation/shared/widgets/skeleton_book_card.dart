@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:palm_code_challenge/data/models/index.dart';
 import 'package:palm_code_challenge/presentation/shared/widgets/book_card.dart';
@@ -54,7 +55,7 @@ class SkeletonBookCardAlternative extends StatelessWidget {
             height: 80.h,
             borderRadius: BorderRadius.circular(8.r),
           ),
-          SizedBox(width: 12.w),
+          Gap(12.w),
           // Book details skeleton
           Expanded(
             child: Column(
@@ -62,17 +63,17 @@ class SkeletonBookCardAlternative extends StatelessWidget {
               children: [
                 // Title lines
                 SkeletonLine(width: double.infinity, height: 16),
-                SizedBox(height: 4.h),
+                Gap(4.h),
                 SkeletonLine(width: 200.w, height: 16),
-                SizedBox(height: 8.h),
+                Gap(8.h),
                 // Author line
                 SkeletonLine(width: 150.w, height: 14),
-                SizedBox(height: 8.h),
+                Gap(8.h),
                 // Download count and subject
                 Row(
                   children: [
                     SkeletonLine(width: 80.w, height: 12),
-                    SizedBox(width: 16.w),
+                    Gap(16.w),
                     SkeletonLine(width: 100.w, height: 12),
                   ],
                 ),

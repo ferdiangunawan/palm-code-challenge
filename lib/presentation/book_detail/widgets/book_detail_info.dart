@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:palm_code_challenge/data/models/index.dart';
 
 class BookDetailInfo extends StatelessWidget {
@@ -13,12 +14,12 @@ class BookDetailInfo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(book.title, style: Theme.of(context).textTheme.titleLarge),
-          const SizedBox(height: 8),
+          const Gap(8),
           Text(
             'by ${book.authors.isNotEmpty ? book.authors.map((a) => a.name).join(', ') : 'Unknown'}',
             style: Theme.of(context).textTheme.bodyMedium,
           ),
-          const SizedBox(height: 12),
+          const Gap(12),
           if (book.subjects.isNotEmpty)
             Wrap(
               spacing: 8,
@@ -28,9 +29,9 @@ class BookDetailInfo extends StatelessWidget {
                       .map((s) => Chip(label: Text(s)))
                       .toList(),
             ),
-          const SizedBox(height: 12),
+          const Gap(12),
           Text('Language: ${book.languages.join(", ")}'),
-          const SizedBox(height: 8),
+          const Gap(8),
           Text('Downloads: ${book.downloadCount}'),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class InfoCard extends StatelessWidget {
   final String title;
@@ -20,7 +21,7 @@ class InfoCard extends StatelessWidget {
         child: Row(
           children: [
             Icon(icon, color: Theme.of(context).colorScheme.primary),
-            const SizedBox(width: 12),
+            const Gap(12),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

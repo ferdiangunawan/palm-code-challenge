@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:palm_code_challenge/common/utils/network_error_handler.dart';
 
@@ -65,7 +66,7 @@ class BookDetailError extends StatelessWidget {
                       size: 64,
                       color: Colors.grey[500],
                     ),
-                    const SizedBox(height: 16),
+                    const Gap(16),
                     Text(
                       message,
                       style: Theme.of(context).textTheme.bodyLarge,

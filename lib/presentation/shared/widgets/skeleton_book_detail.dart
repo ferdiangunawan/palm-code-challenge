@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:palm_code_challenge/presentation/shared/widgets/skeleton_info_card.dart';
 
@@ -71,33 +72,33 @@ class SkeletonBookDetail extends StatelessWidget {
                       style: Theme.of(context).textTheme.headlineMedium
                           ?.copyWith(fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 8.h),
+                    Gap(8.h),
                     Text(
                       'by Loading Author Name, Another Author',
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         color: Colors.grey[600],
                       ),
                     ),
-                    SizedBox(height: 16.h),
+                    Gap(16.h),
                     SkeletonInfoCard(
                       title: 'Download Count',
                       value: '12,345 downloads',
                       icon: Icons.download,
                     ),
-                    SizedBox(height: 8.h),
+                    Gap(8.h),
                     SkeletonInfoCard(
                       title: 'Languages',
                       value: 'English, French',
                       icon: Icons.language,
                     ),
-                    SizedBox(height: 16.h),
+                    Gap(16.h),
                     Text(
                       'Subjects',
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 8.h),
+                    Gap(8.h),
                     Wrap(
                       spacing: 8.w,
                       runSpacing: 8.h,
@@ -109,14 +110,14 @@ class SkeletonBookDetail extends StatelessWidget {
                         );
                       }),
                     ),
-                    SizedBox(height: 16.h),
+                    Gap(16.h),
                     Text(
                       'Bookshelves',
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 8.h),
+                    Gap(8.h),
                     Wrap(
                       spacing: 8.w,
                       runSpacing: 8.h,
@@ -128,7 +129,7 @@ class SkeletonBookDetail extends StatelessWidget {
                         );
                       }),
                     ),
-                    SizedBox(height: 32.h),
+                    Gap(32.h),
                   ],
                 ),
               ),

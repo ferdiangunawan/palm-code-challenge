@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 import 'package:palm_code_challenge/data/models/index.dart';
 import 'package:palm_code_challenge/presentation/shared/widgets/index.dart';
 
@@ -48,7 +49,7 @@ class BookCard extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 12.w),
+              Gap(12.w),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +63,7 @@ class BookCard extends StatelessWidget {
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
-                    SizedBox(height: 4.h),
+                    Gap(4.h),
                     Text(
                       book.authorsString,
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
@@ -72,7 +73,7 @@ class BookCard extends StatelessWidget {
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
-                    SizedBox(height: 8.h),
+                    Gap(8.h),
                     Row(
                       children: [
                         Icon(
@@ -80,7 +81,7 @@ class BookCard extends StatelessWidget {
                           size: 16.sp,
                           color: Colors.grey[600],
                         ),
-                        SizedBox(width: 4.w),
+                        Gap(4.w),
                         Text(
                           '${book.downloadCount}',
                           style: Theme.of(
@@ -91,7 +92,7 @@ class BookCard extends StatelessWidget {
                           ),
                         ),
                         if (book.subjects.isNotEmpty) ...[
-                          SizedBox(width: 16.w),
+                          Gap(16.w),
                           Flexible(
                             child: Text(
                               book.primarySubject,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 import 'package:palm_code_challenge/data/models/index.dart';
 
 class BookDetailDescription extends StatelessWidget {
@@ -28,7 +29,7 @@ class BookDetailDescription extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 8.0.w),
+          Gap(8.h),
           // show book description
           Text(
             book.formats['text/plain; charset=utf-8'] ??

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 import 'package:palm_code_challenge/presentation/shared/widgets/safe_cached_network_image.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
@@ -135,7 +136,7 @@ class _PhotoViewerState extends State<PhotoViewer>
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(Icons.broken_image, size: 64, color: Colors.white54),
-                      SizedBox(height: 16),
+                      Gap(16),
                       Text(
                         'Failed to load image',
                         style: TextStyle(color: Colors.white54, fontSize: 16),
