@@ -32,8 +32,8 @@ This project follows Clean Architecture principles with:
 
 ## Prerequisites
 
-- Flutter SDK (>=3.7.2)
-- Dart SDK (>=3.7.2)
+- Flutter SDK (>=3.32.5)
+- Dart SDK (>=3.8.1)
 - Make (for using Makefile commands)
 
 ### Installing Make (if you don't have it)
