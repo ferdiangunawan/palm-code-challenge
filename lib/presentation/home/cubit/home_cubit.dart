@@ -14,6 +14,7 @@ class HomeCubit extends Cubit<HomeState> {
   final LikedBooksRepository _likedBooksRepository;
 
   Timer? _debounceTimer;
+  StreamSubscription<List<Book>>? _likedBooksSubscription;
 
   HomeCubit(this._booksRepository, this._likedBooksRepository)
     : super(
@@ -27,12 +28,28 @@ class HomeCubit extends Cubit<HomeState> {
         ),
       ) {
     _initializeLikedBooks();
+    _watchLikedBooks();
   }
 
   void _initializeLikedBooks() {
     final likedBooks = _likedBooksRepository.getLikedBooks();
     final likedBookIds = likedBooks.map((book) => book.id).toSet();
     emit(state.copyWith(likedBookIds: likedBookIds));
+  }
+
+  void _watchLikedBooks() {
+    _likedBooksSubscription?.cancel();
+    _likedBooksSubscription = _likedBooksRepository.watchLikedBooks().listen(
+      (likedBooks) {
+        final likedBookIds = likedBooks.map((book) => book.id).toSet();
+        emit(state.copyWith(likedBookIds: likedBookIds));
+      },
+      onError: (error) {
+        NetworkErrorHandler.logError(error, 'HomeCubit._watchLikedBooks');
+        // On error, fallback to manual refresh
+        _initializeLikedBooks();
+      },
+    );
   }
 
   Future<void> loadBooks() async {
@@ -132,8 +149,15 @@ class HomeCubit extends Cubit<HomeState> {
 
   void search(String query) {
     _debounceTimer?.cancel();
-    _debounceTimer = Timer(const Duration(milliseconds: 500), () {
-      final searchQuery = query.trim().isEmpty ? null : query.trim();
+    _debounceTimer = Timer(const Duration(milliseconds: 200), () {
+      emit(
+        state.copyWith(
+          isLoadingMore: false,
+          booksLoadData: ViewData.initial(),
+          books: [],
+        ),
+      );
+      final searchQuery = query.trim().isEmpty ? '' : query.trim();
       final newParams = state.params.copyWith(search: searchQuery);
       emit(state.copyWith(params: newParams));
       loadBooks();
@@ -141,8 +165,14 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   void clearSearch() {
-    final newParams = state.params.copyWith(search: null);
-    emit(state.copyWith(params: newParams));
+    emit(
+      state.copyWith(
+        params: ParamGetBooks(),
+        books: [],
+        hasReachedMax: false,
+        isLoadingMore: false,
+      ),
+    );
     loadBooks();
   }
 
@@ -182,6 +212,7 @@ class HomeCubit extends Cubit<HomeState> {
   @override
   Future<void> close() {
     _debounceTimer?.cancel();
+    _likedBooksSubscription?.cancel();
     return super.close();
   }
 }

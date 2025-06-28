@@ -38,15 +38,12 @@ class BookCard extends StatelessWidget {
                     heroTag: 'photo_${book.id}',
                   );
                 },
-                child: Hero(
-                  tag: 'book_${book.id}',
-                  child: SafeCachedNetworkImage(
-                    imageUrl: book.imageUrl,
-                    width: 60.w,
-                    height: 80.h,
-                    fit: BoxFit.cover,
-                    borderRadius: BorderRadius.circular(8.r),
-                  ),
+                child: SafeCachedNetworkImage(
+                  imageUrl: book.imageUrl,
+                  width: 60.w,
+                  height: 80.h,
+                  fit: BoxFit.cover,
+                  borderRadius: BorderRadius.circular(8.r),
                 ),
               ),
               Gap(12.w),
@@ -84,24 +81,22 @@ class BookCard extends StatelessWidget {
                         Gap(4.w),
                         Text(
                           '${book.downloadCount}',
-                          style: Theme.of(
-                            context,
-                          ).textTheme.bodySmall?.copyWith(
-                            color: Colors.grey[600],
-                            fontSize: 12.sp,
-                          ),
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(
+                                color: Colors.grey[600],
+                                fontSize: 12.sp,
+                              ),
                         ),
                         if (book.subjects.isNotEmpty) ...[
                           Gap(16.w),
                           Flexible(
                             child: Text(
                               book.primarySubject,
-                              style: Theme.of(
-                                context,
-                              ).textTheme.bodySmall?.copyWith(
-                                color: Colors.blue[600],
-                                fontSize: 12.sp,
-                              ),
+                              style: Theme.of(context).textTheme.bodySmall
+                                  ?.copyWith(
+                                    color: Colors.blue[600],
+                                    fontSize: 12.sp,
+                                  ),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),

@@ -21,14 +21,13 @@ class BookDetailContent extends StatelessWidget {
               SliverAppBar(
                 expandedHeight: 250.h,
                 pinned: true,
-                backgroundColor:
-                    Theme.of(context).brightness == Brightness.dark
-                        ? Theme.of(
-                          context,
-                        ).colorScheme.surface.withValues(alpha: 0.7)
-                        : Theme.of(
-                          context,
-                        ).colorScheme.primary.withValues(alpha: 0.4),
+                backgroundColor: Theme.of(context).brightness == Brightness.dark
+                    ? Theme.of(
+                        context,
+                      ).colorScheme.surface.withValues(alpha: 0.7)
+                    : Theme.of(
+                        context,
+                      ).colorScheme.primary.withValues(alpha: 0.4),
                 leading: IconButton(
                   icon: const Icon(Icons.arrow_back),
                   onPressed: () => context.pop(),
@@ -54,11 +53,11 @@ class BookDetailContent extends StatelessWidget {
                           showPhotoViewer(
                             context: context,
                             imageUrl: bookDetail.imageUrl,
-                            heroTag: 'book_${bookDetail.id}',
+                            heroTag: 'book_${bookDetail.id}_1',
                           );
                         },
                         child: Hero(
-                          tag: 'book_${bookDetail.id}',
+                          tag: 'book_${bookDetail.id}_1',
                           child: SafeCachedNetworkImage(
                             imageUrl: bookDetail.imageUrl,
                             width: double.infinity,
@@ -76,9 +75,8 @@ class BookDetailContent extends StatelessWidget {
                     child: AnimatedHeart(
                       size: 28.w,
                       isLiked: isLiked,
-                      onTap:
-                          () =>
-                              context.read<BookDetailCubit>().toggleBookLike(),
+                      onTap: () =>
+                          context.read<BookDetailCubit>().toggleBookLike(),
                     ),
                   ),
                 ],
