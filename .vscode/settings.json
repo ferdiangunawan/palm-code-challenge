@@ -2,5 +2,6 @@
     "files.associations": {
         "*.ino": "cpp",
         "ios": "cpp"
-    }
+    },
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

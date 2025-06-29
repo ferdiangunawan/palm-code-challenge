@@ -8,7 +8,8 @@ plugins {
 android {
     namespace = "com.example.palm_code_challenge"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "29.0.13113456"
+    // ndkVersion = flutter.ndkVersion // Uncomment if you want to use the NDK version specified in flutter.gradle
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
